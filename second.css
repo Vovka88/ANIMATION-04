@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: olumcn;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    padding: 30px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, 
+    rgba(255,255,255,1) 0%, 
+    rgba(96,96,96,1) 83%, 
+    rgba(0,0,0,1) 100%);
+    -webkit-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    -moz-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    /* Тут починається анімація */
+    animation-name: fly;
+    animation-duration: 4s;
+    animation-timing-function: linier;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fly{
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateY(calc(100vh / 2));
+    }
+    50% {
+        transform: translateY(calc(-100vh / 2));
+    }
+    75% {
+        transform: translateX(calc(100vw / 2));
+    }
+    100%{
+        transform: translateX(calc(100vw / 2));
+    }
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: azure;
+    -webkit-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    -moz-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    margin-right: 20px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 4px;
+    color: aliceblue;
+    font-size: 20px;
+    -webkit-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    -moz-box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+    box-shadow: 10px 10px 44px -12px rgba(112,111,112,1);
+}
+
+.box.rotate-x{
+    animation: rotateX 1500ms infinite alternate ease-in-out 1000ms;
+}
+
+.box.rotate-y{
+    animation: rotateY 1500ms infinite alternate ease-in-out 1000ms;
+}
+
+.box.rotate-x{
+    background-color: teal;
+}
+
+.box.rotate-y{
+    background-color: tomato;
+}
+
+@keyframes rotateX{
+    0% {
+        transform: perspective(400px) rotateX(0deg);
+    }
+    100% {
+        transform: perspective(400px) rotateX(60deg);
+    }
+}
+@keyframes rotateY{
+    0% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(400px) rotateY(60deg);
+    }
+}
